@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我爱背单词</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">我爱背单词</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html">首页</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="wordunion/wordintro.html">单词集</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="wordbook/wordbook.html">我的单词本</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="plan/plan.html">背诵计划</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="exam/exam.html">复习考核</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="memory/memory.html">记忆曲线</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="users/register.html">注册/登录</a>
+            </li> 
+          </ul>
+        </div>  
+    </nav>
+    <div class="flex-center">
+    <div class="container">
+        <div>
+            {% if user.is_authenticated %}
+                <p>你已登录，欢迎你：<a href="#">{{ user.username }}</a></p>
+                <button class="btn btn-default"><a href="{% url 'logout' %}?next={{ request.path }}">注销登录</a>
+                </button>
+                <button class="btn btn-default"><a href="{% url 'password_change' %}?next={{ request.path }}">修改密码</a>
+                </button>
+
+                {% else %}
+                <p>你还没有登录，请
+                <button class="btn btn-default"><a href="{% url 'login' %}?next={{ request.path }}">登录</a></button>
+                或者
+                <button class="btn btn-default"><a href="{% url 'users:register' %}?next={{ request.path }}">注册</a></button>
+                </p>
+                {% endif %}
+        </div>
+    </div>
+</div>
+    <br>
+    <br>
+    <br>
+<div id="demo" class="carousel slide" data-ride="carousel" align="center">
+
+  <!-- 指示符 -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- 轮播图片 -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+    </div>
+  </div>
+
+  <!-- 左右切换按钮 -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+<div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>与其感慨路难行，不如马上出发</h1>
+    </div>
+</body>
+</html>
