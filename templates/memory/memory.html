@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我爱背单词</title>
+    {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js" ></script>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">我爱背单词</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">首页</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="../wordunion/wordintro.html">单词集</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../wordbook/wordbook.html">我的单词本</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../plan/plan.html">背诵计划</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../exam/exam.html">复习考核</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="./memory.html">记忆曲线</a>
+          </li> 
+          <li class="nav-item">
+              <a class="nav-link" href="../users/register.html">注册/登录</a>
+          </li>
+          </ul>
+        </div>  
+    </nav>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>学习记忆曲线<h1>
+    </div>
+    <div id = "chart" style="height: 400px;"></div>
+        <script type="text/javascript">
+                        var myChart = echarts.init(document.getElementById('chart'), 'macarons');
+
+                        var option = {
+                                title : {
+                                    text: '近一周学习情况',
+                                    subtext: ''
+                                },
+                                tooltip : {
+                                    trigger: 'axis'
+                                },
+                                legend: {
+                                    data:['单词数','分数']
+                                },
+                                toolbox: {
+                                    show : true,
+                                    feature : {
+                                        mark : {show: true},
+                                        dataView : {show: true, readOnly: false},
+                                        magicType : {show: true, type: ['line', 'bar']},
+                                        restore : {show: true},
+                                        saveAsImage : {show: true}
+                                    }
+                                },
+                                calculable : true,
+                                xAxis : [
+                                    {
+                                        type : 'category',
+                                        boundaryGap : false,
+                                        data : ['6.21','6.22','6.23','6.24','6.25','6.26','6.27']
+                                    }
+                                ],
+                                yAxis : [
+                                    {
+                                        name : '单词数',
+                                        type : 'value',
+                                        axisLabel : {
+                                            formatter: '{value}'
+                                        }
+                                    },
+                                    {
+                                        name : '分数',
+                                        type : 'value',
+                                        axisLabel : {
+                                            formatter: '{value}'
+                                        }
+                                    }
+                                ],
+                                series : [
+                                    {
+                                        name:'单词数',
+                                        type:'line',
+                                        data:[25, 41, 35, 28, 33, 35, 29],
+                                        markPoint : {
+                                            data : [
+                                                {type : 'max', name: '最大值'},
+                                                {type : 'min', name: '最小值'}
+                                            ]
+                                        },
+                                        markLine : {
+                                            data : [
+                                                {type : 'average', name: '平均值'}
+                                            ]
+                                        },
+                                        smooth: true
+                                    },
+                                    {
+                                        name:'分数',
+                                        type:'line',
+                                        yAxisIndex:1,
+                                        data:[70, 83, 88, 81, 85, 90, 77],
+                                        markPoint : {
+                                            data : [
+                                                {type : 'max', name: '最大值'},
+                                                {type : 'min', name: '最小值'}
+                                            ]
+                                        },
+                                        markLine : {
+                                            data : [
+                                                {type : 'average', name : '平均值'}
+                                            ]
+                                        },
+                                        smooth: true
+                                    }
+                                ]
+                            };
+
+                        // 为echarts对象加载数据
+                        myChart.setOption(option);
+            </script>
+
+</body>
+</html>

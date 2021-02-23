@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>我爱背单词</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">我爱背单词</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">首页</a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="./wordintro.html">单词集</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../wordbook/wordbook.html">我的单词本</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../plan/plan.html">背诵计划</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../exam/exam.html">复习考核</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="../memory/memory.html">记忆曲线</a>
+          </li> 
+          <li class="nav-item">
+              <a class="nav-link" href="../users/register.html">注册/登录</a>
+          </li>
+          </ul>
+        </div>  
+    </nav>
+    <br><br><br><br>
+        <div>
+ <table  class = "table table-responsive table-condensed" align = "center" valign = "middle" >
+  <tbody>
+        <tr >
+            <td width = 15%><img class = "img img-responsive" height = 400 width = 400 src = {% static 'cet4.jpg' %}></td>
+            <td width = 15%><br></br>大学英语四级考试，即CET-4，College English Test Band 4的缩写，是由国家教育部高等教育司主持的全国性教学考试。考试的主要对象是根据教育大纲修完大学英语四级的在校专科生、本科生或研究生。大学英语四、六级标准化考试自1986年末开始筹备，1987年正式实施。</td>
+            <td><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" onclick = "window.location.href='../wordunion/wordunion.html'">进入学习</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">加入单词计划</button>
+            </td>
+            <td width = 15%><img class = "img img-responsive" height = 400 width = 300 src = {% static '2cet6.jpg' %}></td>
+            <td width = 15%><br></br>英语四六级考试是教育部主管的一项全国性的英语考试，其目的是对大学生的实际英语能力进行客观、准确的测量，为大学英语教学提供测评服务。大学英语考试是一项大规模标准化考试，是一个“标准关联的常模参照测验”。大学英语四、六级考试作为一项全国性的教学考试由“国家教育部高教司”主办，分为四级考试(CET-4) 和六级考试(CET-6)，每年各举行两次，分别在同一天的上午和下午进行。</td>
+            <td><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" onclick = "window.location.href='../wordunion/wordunion.html'">进入学习</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">加入单词计划</button>
+            </td>
+        </tr>
+        <tr >
+            <td width = 15%><img class = "img img-responsive" height = 400 width = 400 src = {% static 'ielts.jpg' %}></td>
+            <td width = 15%><br></br>雅思考试（IELTS），全称国际英语语言测试系统，外文名International English Language Testing System，由剑桥大学考试委员会外语考试部、英国文化协会及IDP教育集团共同管理，是一种针对英语能力，为打算到使用英语的国家学习、工作或定居的人们设置的英语水平考试。
+雅思考试分学术类和培训类两种，分别针对申请留学的学生和计划在英语语言国家参加工作或移民的人士。考试分听、说、读、写四个部分，总分9分。</td>
+            <td><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" onclick = "window.location.href='../wordunion/wordunion.html'">进入学习</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">加入单词计划</button>
+            </td>
+            <td width = 15%><img class = "img img-responsive" height = 400 width = 300 src = {% static 'toefl.jpg' %}></td>
+            <td width = 15%><br></br>托福是由美国教育测验服务社（ETS）举办的英语能力考试，全名为“检定非英语为母语者的英语能力考试”，中文由TOEFL而音译为“托福”。
+TOEFL有三种，分别是： pbt—paper based test 纸考 677, cbt—computer based test 机考 300, ibt—internet based test 网考 120, 新托福满分是120分。TOEFL考试的有效期为两年，是从考试日期开始计算的。例如：2003年1月18日参加考试，这次考试成绩的有效期是从2003年1月18日到2005年1月18日。托福复习主要资料为托福机经又称民间托福答案题库。</td>
+            <td><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary" onclick = "window.location.href='../wordunion/wordunion.html'">进入学习</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">加入单词计划</button>
+            </td>
+        </tr>
+  </tbody>
+</table>
+
+        </div>
+</body>
+</html>
